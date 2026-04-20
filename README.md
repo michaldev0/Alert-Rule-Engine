@@ -21,3 +21,19 @@ The rules say that:
 ```text
 16
 ```
+
+## Stage 2
+
+The `LOWADVISORY` case was removed.
+The result is built by appending to a `StringBuilder`.
+
+## Stage 3
+
+Rules are stored as a list of `AlertRule` objects.
+`AlertRuleEngine` checks the rules one by one and joins labels.
+
+Stage 3 tests check that:
+
+- the output for values `1` to `20` still works
+- the engine can use more than two rules
+- rule order is preserved
