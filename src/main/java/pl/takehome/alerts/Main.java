@@ -7,16 +7,18 @@ import java.util.stream.IntStream;
 public class Main {
 
     public static String alertFor(int value) {
-        if (value % 15 == 0) {
-            return "LOWADVISORY";
-        }
+        StringBuilder alert = new StringBuilder();
 
         if (value % 3 == 0) {
-            return "LOW";
+            alert.append("LOW");
         }
 
         if (value % 5 == 0) {
-            return "ADVISORY";
+            alert.append("ADVISORY");
+        }
+
+        if (!alert.isEmpty()) {
+            return alert.toString();
         }
 
         return String.valueOf(value);
