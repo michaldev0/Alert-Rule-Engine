@@ -30,6 +30,18 @@ class AlertRuleEngineTest {
         assertEquals("ADVISORYLOW", engine.alertFor(15));
     }
 
+    @Test
+    void supportsWarnRuleFromStageFour() {
+        AlertRuleEngine engine = new AlertRuleEngine(List.of(
+                new AlertRule(3, "LOW"),
+                new AlertRule(5, "ADVISORY"),
+                new AlertRule(7, "WARN")
+        ));
+
+        assertEquals("LOWWARN", engine.alertFor(21));
+        assertEquals("ADVISORYWARN", engine.alertFor(35));
+        assertEquals("LOWADVISORYWARN", engine.alertFor(105));
+    }
 
     @Test
     void returnsExpectedOutputForValuesFromOneToTwenty() {

@@ -37,3 +37,16 @@ Stage 3 tests check that:
 - the output for values `1` to `20` still works
 - the engine can use more than two rules
 - rule order is preserved
+
+## Stage 4
+
+A new rule was added to Main:
+
+- numbers divisible by `7` return `WARN`
+
+New Stage 4 test checks the required values:
+
+- `21` returns `LOWWARN`
+- `35` returns `ADVISORYWARN`
+- `105` returns `LOWADVISORYWARN`
+
