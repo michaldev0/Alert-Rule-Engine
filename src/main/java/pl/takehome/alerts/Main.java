@@ -11,5 +11,9 @@ public class Main {
         ));
 
         engine.alertsFor(1, 105).forEach(System.out::println);
+
+        System.out.println("Value for 21: " + engine.alertFor(21));
+        System.out.println("Value for 35: " + engine.alertFor(35));
+        System.out.println("Value for 105: " + engine.alertFor(105));
     }
 }
